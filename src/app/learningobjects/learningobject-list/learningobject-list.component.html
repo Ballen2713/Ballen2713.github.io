@@ -1,0 +1,17 @@
+<!-- HTML for the header or jumbotron of the web app -->
+<h6 class="text-center">Learning Object</h6><br/>
+<table class="table table-sm table-hover">
+  <tr *ngFor="let learningobject of learningobjectList">
+      <td>{{ learningobject.name }}</td>
+      <td>{{ learningobject.level }}</td>
+      <td>
+        <!--a html tag to create buttons for editing and deleteing-->
+        <a class="btn"(click)="onEdit(learningobject)"><!--Couldn't figure out how to get this to work-->
+          <i class="fa fa-pencil-square-o"></i>
+        </a>
+        <a class="btn"(click)="onDelete(learningobject.$key)">
+          <i class="fa fa-trash-o"></i>
+        </a>
+      </td>
+  </tr>
+</table>

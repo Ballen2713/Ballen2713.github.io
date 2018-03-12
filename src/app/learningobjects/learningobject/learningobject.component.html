@@ -1,0 +1,25 @@
+<form #learningobjectForm="ngForm" (ngSubmit)="onSubmit(learningobjectForm)">
+    <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="learningobjectService.selectedLearningobject.$key">
+  <div class="form-group">
+    <label>NAME</label>
+    <input class="form-control" name="name" #name="ngModel" [(ngModel)]="learningobjectService.selectedLearningobject.name" placeholder="Learning Objective" required>
+  </div>
+  <div class="form-group">
+    <Label>LEVEL</Label>
+    <select class="form-control" name="level" #level="ngModel" [(ngModel)]="learningobjectService.selectedLearningobject.level" placeholder="Academic Levels">
+      <option>K-8</option>
+      <option>HighSchool</option>
+      <option>Undergraduate</option>
+      <option>Graduate</option>
+      <option>Doctorate(Ph.D)</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-default" type="submit" [disabled]="!learningobjectForm.valid">
+    <i class="fa fa-floppy-o"></i>
+    SUBMIT</button>
+  <button class="btn btn-default" type="reset">
+    <i class="fa fa-repeat"></i>
+    RESET</button>
+  </div>
+</form>
